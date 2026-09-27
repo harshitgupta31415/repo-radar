@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repo-radar"
+version = "1.0.0"
+description = "Audit repository health from the command line."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Harshit Gupta" }]
+dependencies = []
+
+[project.scripts]
+repo-radar = "repo_radar.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["repo_radar*"]
