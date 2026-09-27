@@ -53,6 +53,14 @@ class AuditTests(unittest.TestCase):
             self.assertEqual(code, 1)
             self.assertIn("percentage", payload)
 
+    def test_version_flag_reports_package_version(self):
+        output = StringIO()
+        with self.assertRaises(SystemExit) as exit_context, redirect_stdout(output):
+            main(["--version"])
+
+        self.assertEqual(exit_context.exception.code, 0)
+        self.assertTrue(output.getvalue().strip().endswith(" 1.0.0"))
+
 
 if __name__ == "__main__":
     unittest.main()

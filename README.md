@@ -19,6 +19,7 @@ The result is available as readable terminal output, JSON for automation, or Mar
 python -m repo_radar /path/to/project
 python -m repo_radar . --format markdown --output health.md
 python -m repo_radar . --format json --fail-under 80
+python -m repo_radar --version
 ```
 
 Install it as a local command when developing the package:
